@@ -3,15 +3,15 @@ package com.springsecuritydemo.security.spring;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.servlet.ViewResolver;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
-import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
 
 @Configuration
 @EnableWebMvc
 @ComponentScan(basePackages = "com.springsecuritydemo")
-// is equivalent to <context:component-scan base-package="..." used to lookup the beans and components classes in the spring context.
 public class WebConfig {
 
     @Bean
@@ -21,6 +21,11 @@ public class WebConfig {
         viewResolver.setSuffix(".jsp");
 
         return viewResolver;
+    }
+
+    @Bean
+    public PasswordEncoder passwordEncoder() {
+        return new BCryptPasswordEncoder();
     }
 
 }

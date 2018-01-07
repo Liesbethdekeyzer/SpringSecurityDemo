@@ -15,7 +15,7 @@
             <div>
                 Failed to login.
                 <c:if test="${SPRING_SECURITY_LAST_EXCEPTION != null}">
-                    Reason: <c:out value="${SPRING_SECURITY_LAST_EXCEPTION.message}" />
+                    Reason: <c:out value="${SPRING_SECURITY_LAST_EXCEPTION.message}"/>
                 </c:if>
             </div>
         </c:if>
@@ -40,6 +40,7 @@
         </p>
         <div>
             <button type="submit" class="btn">Log in</button>
+
             <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
 
         </div>

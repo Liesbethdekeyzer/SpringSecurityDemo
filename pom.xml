@@ -68,6 +68,11 @@
             <artifactId>mysql-connector-java</artifactId>
             <version>5.1.31</version>
         </dependency>
+        <dependency>
+            <groupId>commons-dbcp</groupId>
+            <artifactId>commons-dbcp</artifactId>
+            <version>1.4</version>
+        </dependency>
 
 
         <!-- Spring MVC -->
@@ -155,6 +160,14 @@
             <version>${junit.version}</version>
             <scope>test</scope>
         </dependency>
+
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok-maven</artifactId>
+            <version>1.16.18.1</version>
+            <type>pom</type>
+        </dependency>
+
 
     </dependencies>
 
